@@ -1,0 +1,11 @@
+{
+    "watch": ["src"],
+    "ext": "ts,js",
+    "verbose": false,
+    "ignore": [
+        "src/**/*.spec.ts", "src/decorators",
+        "src/interfaces", "src/services",
+        "src/app.module.ts"
+    ],
+    "exec": "node -r @swc-node/register ./src/dev.ts" 
+}

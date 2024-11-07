@@ -1,0 +1,51 @@
+{
+	"name": "@cmmv/formbuilder",
+	"version": "0.0.1",
+	"main": "index.js",
+	"scripts": {
+		"dev": "NODE_ENV=dev nodemon",
+		"test": "vitest",
+		"build": "vite build && tsc --emitDeclarationOnly && mv dist/src dist/types",
+		"changelog": "conventional-changelog -p angular -i CHANGELOG.md -s",
+		"release": "node scripts/release.js"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+ssh://git@github.com/andrehrferreira/cmmv-formbuilder.git"
+	},
+	"keywords": [
+		"cmmv",
+		"form",
+		"builder"
+	],
+	"author": "Andre Ferreira",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/andrehrferreira/cmmv-formbuilder/issues"
+	},
+	"homepage": "https://github.com/andrehrferreira/cmmv-formbuilder#readme",
+	"description": "",
+	"devDependencies": {
+		"@cmmv/http": "^0.5.0",
+		"@swc-node/core": "^1.13.3",
+		"@swc-node/register": "^1.10.9",
+		"@swc/core": "^1.9.1",
+		"@swc/helpers": "^0.5.13",
+		"@types/node": "^22.9.0",
+		"@vitejs/plugin-vue": "^5.1.4",
+		"conventional-changelog": "^6.0.0",
+		"conventional-changelog-cli": "^5.0.0",
+		"jsdom": "^25.0.1",
+		"jsdom-global": "^3.0.2",
+		"nodemon": "^3.1.7",
+		"prettier": "^3.3.3",
+		"terser": "^5.36.0",
+		"typescript": "^5.6.3",
+		"vite": "^5.4.10",
+		"vitest": "^2.1.4",
+		"vue": "3"
+	},
+	"dependencies": {
+		"@cmmv/core": "^0.5.0"
+	}
+}
