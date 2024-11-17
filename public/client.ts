@@ -1,5 +1,5 @@
 import { createApp } from 'vue';
-import App from './App.vue';
+import App from './app.vue';
 import Vueform from '@vueform/vueform';
 import MaskPlugin from '@vueform/plugin-mask';
 import { createI18n } from 'vue-i18n'

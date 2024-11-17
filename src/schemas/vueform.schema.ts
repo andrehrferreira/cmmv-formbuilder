@@ -1,5 +1,9 @@
 import { ViewSchema } from "../abstracts";
-import { ViewElement, ViewTab } from "../interfaces";
+
+import { 
+    ViewElement, ViewTab,
+    ParsedContract 
+} from "../interfaces";
 
 export class VueformSchema extends ViewSchema {
     public override name = "vueform";
@@ -575,7 +579,12 @@ export class VueformSchema extends ViewSchema {
         slots: "object"
     }
 
-    public parser(components: Record<string, ViewElement>, tabs? :Array<ViewTab>): string {
+    public override parser(
+        contract: ParsedContract,
+        components: Record<string, ViewElement>, 
+        tabs? :Array<ViewTab>
+    ): string {
+        console.log(contract);
         let vueTemplate = `<!-- Generated automatically by CMMV -->
 
 <template>\n    <Vueform ref="form$">\n`;
@@ -647,12 +656,7 @@ export class VueformSchema extends ViewSchema {
         if(tabs && tabs.length > 0)
             vueTemplate += `            </FormElements>\n        </template>\n`
         
-        vueTemplate += `    </Vueform>\n 
-    <div class="flex-grow flex justify-center items-center">        
-        <div class="text-zinc-50">
-            <pre>{{ form$?.data }}</pre>
-        </div>
-    </div>
+        vueTemplate += `    </Vueform>\n
 </template>\n\n`;
 
         vueTemplate += `<style scoped>\n/* Add your styles here */\n</style>\n\n`;

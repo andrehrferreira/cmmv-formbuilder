@@ -1,4 +1,4 @@
-import { ViewSchema } from "../abstracts/viewSchema.abstract";
+import { ViewSchema } from "../abstracts";
 
 export interface FormOptions {
     schema: new () => ViewSchema;

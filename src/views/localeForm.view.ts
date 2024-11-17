@@ -3,16 +3,11 @@ import { Form } from "../decorators";
 import { VueformSchema } from "../schemas";
 
 @Form({
+    schema: VueformSchema,
     output: "public/components/localeForm.vue",
-    useRPC: true,
-    schema: VueformSchema
+    useRPC: true
 })
-export class LocaleViewForm extends AbstractView {
-    public tabs = [
-        { name: "code", "label": "Code", elements: ["code", "code3"] },
-        { name: "names", "label": "Names", elements: ["name", "nameOriginal"] }
-    ]
-
+export class LocaleForm extends AbstractForm {
     public components = {
         title: { 
             type: "static", 
@@ -74,7 +69,7 @@ export class LocaleViewForm extends AbstractView {
                 "button-label": "Submit",
                 "button-type": "submit",
                 submits: true,
-                full: true
+                full: false
             } 
         }
     }

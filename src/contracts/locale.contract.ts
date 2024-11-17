@@ -3,13 +3,16 @@ import {
     ContractField
 } from '@cmmv/core';
 
-import { LocaleViewForm } from "../views/localeForm.view";
+import { 
+    LocaleForm, LocalePage
+} from "../views";
 
 @Contract({
     controllerName: 'Locales',
     protoPath: 'src/protos/locales.proto',
     protoPackage: 'locales',
-    viewForm: LocaleViewForm
+    viewForm: LocaleForm,
+    viewPage: LocalePage
 })
 export class LocalesContract extends AbstractContract {
     @ContractField({

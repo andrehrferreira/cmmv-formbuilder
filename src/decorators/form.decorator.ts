@@ -1,10 +1,10 @@
  import { FormOptions } from "../interfaces";
 
-export const VIEW_SCHEMA = Symbol('view_schema');
-export const VIEW_OUTPUT = Symbol('view_output');
-export const VIEW_GENERATEHTML = Symbol('view_generateHTML');
-export const VIEW_INJECTCONTROLLER = Symbol('view_injectController');
-export const VIEW_USERPC = Symbol('view_useRPC');
+export const FORM_SCHEMA = Symbol('form_schema');
+export const FORM_OUTPUT = Symbol('form_output');
+export const FORM_GENERATEHTML = Symbol('form_generateHTML');
+export const FORM_INJECTCONTROLLER = Symbol('form_injectController');
+export const FORM_USERPC = Symbol('form_useRPC');
 
 export function Form(options?: FormOptions): ClassDecorator{
     const isValidClass = (value: any) => {
@@ -44,10 +44,10 @@ export function Form(options?: FormOptions): ClassDecorator{
           ];
 
     return (target: object) => {
-        Reflect.defineMetadata(VIEW_SCHEMA, schema, target);
-        Reflect.defineMetadata(VIEW_OUTPUT, output, target);
-        Reflect.defineMetadata(VIEW_GENERATEHTML, generateHTML, target);
-        Reflect.defineMetadata(VIEW_INJECTCONTROLLER, injectController, target);
-        Reflect.defineMetadata(VIEW_USERPC, useRPC, target);
+        Reflect.defineMetadata(FORM_SCHEMA, schema, target);
+        Reflect.defineMetadata(FORM_OUTPUT, output, target);
+        Reflect.defineMetadata(FORM_GENERATEHTML, generateHTML, target);
+        Reflect.defineMetadata(FORM_INJECTCONTROLLER, injectController, target);
+        Reflect.defineMetadata(FORM_USERPC, useRPC, target);
     };
 }

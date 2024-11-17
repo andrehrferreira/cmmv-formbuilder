@@ -68,6 +68,11 @@ module.exports = {
             type: "text/javascript", 
             src: "/assets/bundle.min.js", 
             defer: "defer" 
+        },
+        { 
+            type: "text/javascript", 
+            src: "https://cdn.tailwindcss.com", 
+            defer: "defer" 
         }
     ]
 };

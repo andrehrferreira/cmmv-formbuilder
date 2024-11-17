@@ -1,24 +1,8 @@
 <template>
-    <nav class="dark:text-zinc-50">
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/locale">Locale</RouterLink>
-    </nav>
-    <main>
-        <div>
-            <RouterView />
-        </div>
+    <main class="container m-auto">
+        <RouterView />
     </main>
 </template>
-
-<style lang="scss">
-  @import '@vueform/vueform/themes/vueform/scss/index.scss';
-
-  @media (prefers-color-scheme: dark) {
-    :root, :before, :after, * {
-      @include vf-dark-vars;
-    }
-  }
-</style>
   
 <script setup lang="ts">
 import CmmvMixins from "/public/assets/rpc-mixins.js";

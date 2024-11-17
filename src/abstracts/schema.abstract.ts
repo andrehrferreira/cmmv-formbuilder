@@ -1,12 +1,16 @@
 import * as fs from 'node:fs';
 import * as path from 'node:path';
 
-import { ViewElement } from "../interfaces";
+import { 
+    ViewElement, ViewTab,
+    ParsedContract 
+} from "../interfaces";
 
 export abstract class ViewSchema {
     public name: string = "";
     public ext: string = "";
     public imports: Array<string> = [];
+
     public components: Record<
         string,
         {
@@ -15,9 +19,14 @@ export abstract class ViewSchema {
             props?: Record<string, string>;
         }
     > = {}
+
     public genericAttrs: Record<string, string>;
 
-    public parser(components: Record<string, ViewElement>){ }   
+    public parser(
+        contract: ParsedContract,
+        components: Record<string, ViewElement>, 
+        tabs? :Array<ViewTab>
+    ){ }   
 
     public generateOutput(outputPath: string, vueTemplate: string): void {
         if(!fs.existsSync(path.dirname(outputPath)))
