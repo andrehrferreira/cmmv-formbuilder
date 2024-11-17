@@ -1,7 +1,9 @@
+import { ViewSchema } from "../abstracts/viewSchema.abstract";
+
 export interface FormOptions {
-    contract: string;
-    template: string;
-    outputFilename?: string;
+    schema: new () => ViewSchema;
+    output: string;
     generateHTML?: boolean;
     injectController?: boolean;
+    useRPC?: boolean
 }

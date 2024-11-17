@@ -47,3 +47,11 @@ yarn.lock
 # Gsuite
 googleapis.json
 newrelic.js
+
+#Ignore CMMV Teste
+/src/controllers
+/src/models
+/src/services
+/src/gateways
+/src/protos
+/src/entities

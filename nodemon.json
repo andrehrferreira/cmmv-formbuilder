@@ -5,7 +5,10 @@
     "ignore": [
         "src/**/*.spec.ts", "src/decorators",
         "src/interfaces", "src/services",
-        "src/app.module.ts"
+        "src/modules", "src/models",
+        "src/controllers", "src/protos",
+        "src/gateways", "src/entities",
+        "src/app.module.ts", "src/dev.ts"
     ],
-    "exec": "node -r @swc-node/register ./src/dev.ts" 
+    "exec": "SWC_NODE_PROJECT=tsconfig.server.json node -r @swc-node/register ./src/server.ts" 
 }
