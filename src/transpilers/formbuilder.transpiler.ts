@@ -5,7 +5,7 @@ import {
     Logger, Scope 
 } from '@cmmv/core';
 
-import { AbstractPage, AbstractView } from '../abstracts';
+import { AbstractPage, AbstractForm } from '../abstracts';
 
 import { ParsedContract } from "../interfaces";
 
@@ -64,7 +64,7 @@ export class FormBuilderTranspile implements ITranspile {
         });
     }
 
-    private getFormMetadata(view: new () => AbstractView) {
+    private getFormMetadata(view: new () => AbstractForm) {
         const viewInstance = new view();
         
         const output = Reflect.getMetadata(

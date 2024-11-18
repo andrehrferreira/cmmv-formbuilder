@@ -1,16 +1,23 @@
 {
 	"name": "@cmmv/formbuilder",
 	"version": "0.0.1",
-	"main": "index.js",
+	"main": "dist/index.js",
 	"scripts": {
+		"prebuild": "rimraf dist",
 		"dev": "NODE_ENV=dev concurrently \"pnpm dev:server\" \"pnpm dev:client\"",
 		"dev:server": "NODE_ENV=dev nodemon",
 		"dev:client": "NODE_ENV=dev vite",
 		"test": "vitest",
-		"build": "vite build && tsc --emitDeclarationOnly && mv dist/src dist/types",
-		"build:css": "tailwindcss -i ./public/tailwind.css -o ./public/assets/bundle.min.css --minify",
+		"build": "NODE_ENV=build tsc -p tsconfig.server.json && mv dist/src dist/types",
 		"changelog": "conventional-changelog -p angular -i CHANGELOG.md -s",
-		"release": "node scripts/release.js"
+		"release": "node scripts/release.js",
+		"lint": "pnpm run lint:spec",
+		"lint:fix": "pnpm run lint:spec -- --fix",
+		"lint:spec": "eslint 'tests/**/**.spec.ts' --no-ignore",
+		"prepare": "husky"
+	},
+	"engines": {
+		"node": ">= 18.18.0 || >= 20.0.0"
 	},
 	"repository": {
 		"type": "git",
@@ -19,6 +26,7 @@
 	"keywords": [
 		"cmmv",
 		"form",
+		"pages",
 		"builder"
 	],
 	"author": "Andre Ferreira",
@@ -28,6 +36,24 @@
 	},
 	"homepage": "https://github.com/andrehrferreira/cmmv-formbuilder#readme",
 	"description": "",
+	"changelog": {
+		"labels": {
+			"type: feature :tada:": "Features",
+			"type: bug :sob:": "Bug fixes",
+			"type: enhancement :wolf:": "Enhancements",
+			"type: docs :page_facing_up:": "Docs",
+			"type: code style": "Code style tweaks",
+			"dependencies": "Dependencies"
+		}
+	},
+	"lint-staged": {
+		"**/*.ts": [
+			"prettier --ignore-path ./.prettierignore --write"
+		],
+		"packages/**/*.json": [
+			"prettier --ignore-path ./.prettierignore --write"
+		]
+	},
 	"devDependencies": {
 		"@cmmv/http": "^0.5.10",
 		"@cmmv/protobuf": "^0.5.10",
@@ -35,18 +61,28 @@
 		"@cmmv/view": "^0.5.10",
 		"@cmmv/vite": "^0.5.10",
 		"@cmmv/ws": "^0.5.10",
+		"@commitlint/cli": "^19.5.0",
+		"@commitlint/config-angular": "^19.5.0",
+		"@commitlint/config-conventional": "^19.5.0",
 		"@swc-node/core": "^1.13.3",
 		"@swc-node/register": "^1.10.9",
 		"@swc/core": "^1.9.2",
 		"@swc/helpers": "^0.5.15",
 		"@types/node": "^22.9.0",
+		"@typescript-eslint/eslint-plugin": "^8.14.0",
+		"@typescript-eslint/parser": "^8.14.0",
 		"@vitejs/plugin-vue": "^5.2.0",
 		"autoprefixer": "^10.4.20",
 		"concurrently": "^9.1.0",
 		"conventional-changelog": "^6.0.0",
 		"conventional-changelog-cli": "^5.0.0",
+		"eslint": "^9.15.0",
+		"eslint-config-prettier": "^9.1.0",
+		"eslint-plugin-import": "^2.31.0",
+		"husky": "^9.1.6",
 		"jsdom": "^25.0.1",
 		"jsdom-global": "^3.0.2",
+		"lint-staged": "^15.2.10",
 		"nodemon": "^3.1.7",
 		"postcss": "^8.4.49",
 		"postcss-nesting": "^13.0.1",
@@ -73,6 +109,7 @@
 		"datatables.net-vue3": "^3.0.2",
 		"fast-json-stringify": "^6.0.0",
 		"reflect-metadata": "^0.2.2",
+		"rimraf": "^6.0.1",
 		"sass-embedded": "^1.81.0",
 		"vue-i18n": "^10.0.4",
 		"vue-router": "^4.4.5"

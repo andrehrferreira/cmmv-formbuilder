@@ -62,6 +62,7 @@ describe('Form Decorator', () => {
     });
 
     it('should set schema to null if no schema is provided in options', () => {
+        //@ts-ignore
         @Form({ output: 'test/output.vue' })
         class TestForm {}
 
@@ -69,6 +70,7 @@ describe('Form Decorator', () => {
     });
 
     it('should handle a mix of valid and default options', () => {
+        //@ts-ignore
         @Form({ generateHTML: true, useRPC: false })
         class MixedForm {}
 
@@ -78,6 +80,7 @@ describe('Form Decorator', () => {
     });
 
     it('should define metadata when only schema is provided', () => {
+        //@ts-ignore
         @Form({ schema: DefaultFormSchema })
         class SchemaOnlyForm {}
 
@@ -97,6 +100,7 @@ describe('Form Decorator', () => {
         @Form({ schema: DefaultFormSchema, output: 'nested/parent.vue' })
         class ParentForm {}
 
+        //@ts-ignore
         @Form({ output: 'nested/child.vue' })
         class ChildForm {}
 
@@ -109,6 +113,7 @@ describe('Form Decorator', () => {
     it('should handle a schema defined as a function class', () => {
         class CustomSchema {}
 
+        //@ts-ignore
         @Form({ schema: CustomSchema, output: 'function/schema.vue' })
         class FunctionSchemaForm {}
 

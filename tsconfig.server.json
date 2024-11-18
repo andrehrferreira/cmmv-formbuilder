@@ -1,7 +1,7 @@
 {
     "compilerOptions": {
         "module": "commonjs",
-		"moduleResolution": "node",
+        "moduleResolution": "node",
         "declaration": true,
         "removeComments": true,
         "emitDecoratorMetadata": true,
@@ -27,8 +27,18 @@
         "useDefineForClassFields": true,
         "allowJs": false,
         "lib": ["esnext", "dom"],
-        "types": ["node", "mocha"],
+        "types": ["node"]
     },
-    "include": ["src/**/*.ts", "vueform.config.ts", "public/client.ts", "public/router.ts",],
-    "exclude": ["node_modules", "dist", "**/*.spec.ts"]
+    "include": ["src/**/*.ts"],
+    "exclude": [
+        "node_modules",
+        "dist",
+        "**/*.spec.ts",
+        "src/entities/**/*",
+        "src/controllers/**/*",
+        "src/gateways/**/*",
+        "src/models/**/*",
+        "src/protos/**/*",
+        "src/services/**/*"
+    ]
 }

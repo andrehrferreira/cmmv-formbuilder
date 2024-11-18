@@ -1,5 +1,5 @@
 import { 
-    AbstractView,
+    AbstractForm,
     AbstractPage 
 } from "../abstracts";
 
@@ -16,6 +16,6 @@ export interface ParsedContract {
     cache: object,
     customProto: string|undefined,
     customTypes: string|undefined,
-    viewForm: new () => AbstractView|null|undefined,
+    viewForm: new () => AbstractForm|null|undefined,
     viewPage: new () => AbstractPage|null|undefined,
 }
