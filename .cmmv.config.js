@@ -44,9 +44,9 @@ module.exports = {
     },
 
     formBuilder: {
-        schema: "default",
         output: "public/views",
-        vue3: true
+        api: process.env.SERVER_PATH | "http://localhost:3000",
+        useRPC: true
     },
 
     head: {

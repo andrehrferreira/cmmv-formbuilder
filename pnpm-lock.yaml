@@ -9,11 +9,14 @@ importers:
   .:
     dependencies:
       '@cmmv/core':
-        specifier: ^0.5.8
-        version: 0.5.8
+        specifier: ^0.5.10
+        version: 0.5.10
       '@vueform/plugin-mask':
         specifier: ^1.0.7
         version: 1.0.7(typescript@5.6.3)
+      '@vueform/vueform':
+        specifier: ^1.11.0
+        version: 1.11.0
       class-transformer:
         specifier: ^0.5.1
         version: 0.5.1
@@ -49,23 +52,23 @@ importers:
         version: 4.4.5(vue@3.5.13(typescript@5.6.3))
     devDependencies:
       '@cmmv/http':
-        specifier: ^0.5.8
-        version: 0.5.8(typescript@5.6.3)
+        specifier: ^0.5.10
+        version: 0.5.10(typescript@5.6.3)
       '@cmmv/protobuf':
-        specifier: ^0.5.8
-        version: 0.5.8
+        specifier: ^0.5.10
+        version: 0.5.10
       '@cmmv/repository':
-        specifier: ^0.5.8
-        version: 0.5.8(sqlite3@5.1.7)
+        specifier: ^0.5.10
+        version: 0.5.10(sqlite3@5.1.7)
       '@cmmv/view':
-        specifier: ^0.5.8
-        version: 0.5.8(typescript@5.6.3)
+        specifier: ^0.5.10
+        version: 0.5.10(typescript@5.6.3)
       '@cmmv/vite':
-        specifier: ^0.5.8
-        version: 0.5.8
+        specifier: ^0.5.10
+        version: 0.5.10
       '@cmmv/ws':
-        specifier: ^0.5.8
-        version: 0.5.8
+        specifier: ^0.5.10
+        version: 0.5.10
       '@swc-node/core':
         specifier: ^1.13.3
         version: 1.13.3(@swc/core@1.9.2(@swc/helpers@0.5.15))(@swc/types@0.1.15)
@@ -84,9 +87,6 @@ importers:
       '@vitejs/plugin-vue':
         specifier: ^5.2.0
         version: 5.2.0(vite@5.4.11(@types/node@22.9.0)(sass-embedded@1.81.0)(sass@1.81.0)(terser@5.36.0))(vue@3.5.13(typescript@5.6.3))
-      '@vueform/vueform':
-        specifier: ^1.11.0
-        version: 1.11.0
       autoprefixer:
         specifier: ^10.4.20
         version: 10.4.20(postcss@8.4.49)
@@ -197,8 +197,8 @@ packages:
   '@cmmv/cookie-parser@0.5.2':
     resolution: {integrity: sha512-xb0u7+24NsoJNzTjOQQwKAIuueN6YVsvJa/LZXMZlfHAgwEE476Uhai6L4rFcdz4UXtWZFqA5OhT8JFevxQsQA==}
 
-  '@cmmv/core@0.5.8':
-    resolution: {integrity: sha512-pQAdq7zpJ6c/adQYEdZc5tfpyLJyzZ6CMk7WDkpjOX+b1ChNAcll/RmKMPVjNrTjFDpPAFPgyma8m2fX6rqkfA==}
+  '@cmmv/core@0.5.10':
+    resolution: {integrity: sha512-6ho3Bqy7mWCPzmNK7HXogLYuLXnDJbVfXh0J/OO7qbEtIbqIuXBMeK5VLKmfZFKddfb1TK0S6UCwH2cl5OpPBQ==}
 
   '@cmmv/cors@0.5.2':
     resolution: {integrity: sha512-sIvtcAS7/4FhrI65txfUZMLZ5TAN3y9MINBrSblclLOXM68xnfo8q2Tstz/vFKh13mbtPZCnbSQFVkOVQLunsA==}
@@ -209,17 +209,17 @@ packages:
   '@cmmv/helmet@0.5.2':
     resolution: {integrity: sha512-1s1yBqYOMXqDNLg8kszGWd+wc1B9KJ9Ar9xiNK1WdHWnBC5DwwITE1mzN2wNmEwct64/SqtRpYDP7xXf2G58Eg==}
 
-  '@cmmv/http@0.5.8':
-    resolution: {integrity: sha512-zu1WOBpVJ5XUNnO8jfSqIPBiOuBDCWf0xi7QfmG+5q9/a90L7mHYg3muoAEGuBdP30BbB/yPeDPf9tDhhspmxQ==}
+  '@cmmv/http@0.5.10':
+    resolution: {integrity: sha512-tG4H6rygWtYYXDVr/eGgqjOvOZnT/mZ4O1wS8JBzQeEeToNXxohic95Ps6I+lsm9xEzgXSfRYd/bJqRZBmaaOA==}
 
-  '@cmmv/protobuf@0.5.8':
-    resolution: {integrity: sha512-Z9Kf7oxyvt6UVs/dCG/HH/IJGixd7fHrtxq8zknMgkK/bfhjxZa2fLpri/jApM62t5q8f4waII68UdeqcUg2/w==}
+  '@cmmv/protobuf@0.5.10':
+    resolution: {integrity: sha512-pjJk4JMPA9JyGdgkTpTGh9LWI/LzsqnIvR/UT865L6qVUAaMk9oWdmC24tJjPeptMwbS7geQxo7VAe9sMa+xLw==}
 
   '@cmmv/reactivity@0.4.6':
     resolution: {integrity: sha512-9h/+MoC4lnmsg5dlcDxhzZYTSiQOrwOW1uoVSduvaCdbNYA1tpA11S5AHLE00HS+mPsyciXEhMyDEBh7uPkAqQ==}
 
-  '@cmmv/repository@0.5.8':
-    resolution: {integrity: sha512-03cJZ+RNQogcOlZxlEpvOR2TZHVjUHsnuKPkHJX1rnkDypQegWmD2Dkxmffi8KBRfaicBp7RkA7qTZFNeMY57A==}
+  '@cmmv/repository@0.5.10':
+    resolution: {integrity: sha512-K6goYJccR18tDv+p0zwvC4J7XHMfk3bMfgDKPZ2zMHGX+x/6+EU9YhO1u5zKx2uIm915T5DzOLbAWhoZNX0i/Q==}
 
   '@cmmv/server-static@0.5.2':
     resolution: {integrity: sha512-dQCBSYDvFJDKkYGM2oyiGFJlYGrCvhEO0bqT1WHB+vaBnJybn4RnOSrpjGEqGsBKB58QBkp4bxQpfDhOk6ZwQA==}
@@ -227,14 +227,14 @@ packages:
   '@cmmv/server@0.5.2':
     resolution: {integrity: sha512-CyFT9UQoia1nicIQIyGHXFvQPIyC1JDcqGOU8BS6SWBxiAsHPxNj+z5MDQyr11RDArJvGhV3OfAURfHe24qtXA==}
 
-  '@cmmv/view@0.5.8':
-    resolution: {integrity: sha512-SVXGoD8kie7MldiluaI29CdYnTvB8rpULkRSQAkDm5jV0SrMbAohTleVp8Ebw1/t37ShrXO3poOvcDGU0ltuPw==}
+  '@cmmv/view@0.5.10':
+    resolution: {integrity: sha512-QoXzLQQE1xJ4I/e3xkCi5fEuMVFvx6dDq623KoXpL6rQDT0wkKGr2YiziQm5rOgGxtfigDpenvFR2dA03T1YYA==}
 
-  '@cmmv/vite@0.5.8':
-    resolution: {integrity: sha512-tMlbb7xtSQNbJsmsh5AlM6t1rC8zE+JO6a5Nk+36EK+boPi2zhx+q8ZLgpEra5Ddt9GwwHMd9mMMDe84Ukrlcw==}
+  '@cmmv/vite@0.5.10':
+    resolution: {integrity: sha512-1VqH2cNpQL3BIDZGVUfY1VTVQO4SwSYrFo49/Jmqn2UdAoO1WVVPnRE+y3GMBT3fuZWX+ls7VYA8C0vLLT/Ybw==}
 
-  '@cmmv/ws@0.5.8':
-    resolution: {integrity: sha512-0TIqicfzKz345OMU3p7y6OB0dE8Z1CLevbxGaOGC9JlsNScCNcMaYnGxYsjwlydIbXYUr2pxmTFbbupJc4LR8g==}
+  '@cmmv/ws@0.5.10':
+    resolution: {integrity: sha512-r4Uk33hlgvpILczS/GW/vI8Vba/ANJTqMIiF/vRzDOdwlBn/2ZBE0XheXCKz3oh635kFnCU8AJtjiVWCpJhG3g==}
 
   '@conventional-changelog/git-client@1.0.1':
     resolution: {integrity: sha512-PJEqBwAleffCMETaVm/fUgHldzBE35JFk3/9LL6NUA5EXa3qednu+UT6M7E5iBu3zIQZCULYIiZ90fBYHt6xUw==}
@@ -3012,6 +3012,10 @@ packages:
     resolution: {integrity: sha512-+38qI9SOr8tfZ4QmJNplMUxqjbe7LKvvZgWdExBOmd+egZTtjLB67Gu0HRX3u/XOq7UU2Nx6nsjvS16Z9uwfpg==}
     engines: {node: '>=0.6'}
 
+  qs@6.13.1:
+    resolution: {integrity: sha512-EJPeIn0CYrGu+hli1xilKAPXODtJ12T0sP63Ijx2/khC2JtuaN3JyNIpvmnkmaEtha9ocbG4A4cMcr+TvqvwQg==}
+    engines: {node: '>=0.6'}
+
   qs@6.5.2:
     resolution: {integrity: sha512-N5ZAX4/LxJmF+7wN74pUD6qAh9/wnvdQcjq9TZjevvXzSUo7bfmw91saqMjzGS2xq91/odN2dW/WOl7qQHNDGA==}
     engines: {node: '>=0.6'}
@@ -4157,7 +4161,7 @@ snapshots:
       on-headers: 1.0.2
       vary: 1.1.2
 
-  '@cmmv/core@0.5.8':
+  '@cmmv/core@0.5.10':
     dependencies:
       class-transformer: 0.5.1
       class-validator: 0.14.1
@@ -4184,7 +4188,7 @@ snapshots:
     dependencies:
       helmet: 8.0.0
 
-  '@cmmv/http@0.5.8(typescript@5.6.3)':
+  '@cmmv/http@0.5.10(typescript@5.6.3)':
     dependencies:
       '@cmmv/body-parser': 0.5.2
       '@cmmv/compression': 0.5.2
@@ -4195,7 +4199,7 @@ snapshots:
       '@cmmv/reactivity': 0.4.6
       '@cmmv/server': 0.5.2
       '@cmmv/server-static': 0.5.2
-      '@cmmv/view': 0.5.8(typescript@5.6.3)
+      '@cmmv/view': 0.5.10(typescript@5.6.3)
       '@fastify/compress': 7.0.3
       '@fastify/cors': 9.0.1
       '@fastify/formbody': 7.4.0
@@ -4221,7 +4225,7 @@ snapshots:
       - typescript
       - utf-8-validate
 
-  '@cmmv/protobuf@0.5.8':
+  '@cmmv/protobuf@0.5.10':
     dependencies:
       fast-glob: 3.3.2
       protobufjs: 7.4.0
@@ -4231,7 +4235,7 @@ snapshots:
     dependencies:
       '@vue/reactivity': 3.5.13
 
-  '@cmmv/repository@0.5.8(sqlite3@5.1.7)':
+  '@cmmv/repository@0.5.10(sqlite3@5.1.7)':
     dependencies:
       typeorm: 0.3.20(sqlite3@5.1.7)
     transitivePeerDependencies:
@@ -4290,7 +4294,7 @@ snapshots:
       negotiator: 0.6.4
       on-headers: 1.0.2
       proxy-addr: 2.0.7
-      qs: 6.13.0
+      qs: 6.13.1
       rxjs: 7.8.1
       send: 0.19.1
       statuses: 2.0.1
@@ -4300,9 +4304,9 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@cmmv/view@0.5.8(typescript@5.6.3)':
+  '@cmmv/view@0.5.10(typescript@5.6.3)':
     dependencies:
-      '@cmmv/protobuf': 0.5.8
+      '@cmmv/protobuf': 0.5.10
       '@cmmv/reactivity': 0.4.6
       fast-glob: 3.3.2
       html-minifier-terser: 7.2.0
@@ -4315,11 +4319,11 @@ snapshots:
       - typescript
       - utf-8-validate
 
-  '@cmmv/vite@0.5.8': {}
+  '@cmmv/vite@0.5.10': {}
 
-  '@cmmv/ws@0.5.8':
+  '@cmmv/ws@0.5.10':
     dependencies:
-      '@cmmv/protobuf': 0.5.8
+      '@cmmv/protobuf': 0.5.10
       class-transformer: 0.5.1
       ws: 8.18.0
     transitivePeerDependencies:
@@ -7339,6 +7343,10 @@ snapshots:
   punycode@2.3.1: {}
 
   qs@6.13.0:
+    dependencies:
+      side-channel: 1.0.6
+
+  qs@6.13.1:
     dependencies:
       side-channel: 1.0.6
 
