@@ -41,7 +41,6 @@
 		"@swc/helpers": "^0.5.15",
 		"@types/node": "^22.9.0",
 		"@vitejs/plugin-vue": "^5.2.0",
-		"@vueform/vueform": "^1.11.0",
 		"autoprefixer": "^10.4.20",
 		"concurrently": "^9.1.0",
 		"conventional-changelog": "^6.0.0",

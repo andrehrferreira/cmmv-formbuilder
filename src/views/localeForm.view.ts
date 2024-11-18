@@ -1,4 +1,4 @@
-import { AbstractView } from "../abstracts";
+import { AbstractForm } from "../abstracts";
 import { Form } from "../decorators";
 import { VueformSchema } from "../schemas";
 
