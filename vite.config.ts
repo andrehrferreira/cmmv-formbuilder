@@ -27,7 +27,7 @@ export default defineConfig({
             },
         }),
         Components({
-            dirs: ['src/components'],
+            dirs: ['src/components', 'node_modules/@cmmv/ui/src/components'],
             extensions: ['vue'],
             include: [/\.vue$/, /\.vue\?vue/],
             resolvers: [],
