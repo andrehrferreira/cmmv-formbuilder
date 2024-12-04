@@ -1,13 +1,10 @@
-import * as path from 'node:path'; 
+import * as path from 'node:path';
 
-import { 
-    Config, ITranspile, 
-    Logger, Scope 
-} from '@cmmv/core';
+import { Config, ITranspile, Logger, Scope } from '@cmmv/core';
 
 import { AbstractPage, AbstractForm } from '../abstracts';
 
-import { ParsedContract } from "../interfaces";
+import { ParsedContract } from '../interfaces';
 
 import {
     FORM_OUTPUT,
@@ -25,48 +22,59 @@ import {
     PAGE_AUTH,
     PAGE_ROLE,
     PAGE_ACTIONS,
-    PAGE_SCHEMA
-} from "../decorators";
+    PAGE_SCHEMA,
+} from '../decorators';
 
 export class FormBuilderTranspile implements ITranspile {
     private logger: Logger = new Logger('FormBuilderTranspile');
 
     run(): void {
         const env = Config.get<string>('env');
-        
-        if (env === 'dev' || env === 'development' || env === 'build') 
+
+        if (env === 'dev' || env === 'development' || env === 'build')
             this.processViews();
     }
 
-    processViews(){
+    processViews() {
         const contracts = Scope.getArray<ParsedContract>('__contracts');
 
         contracts?.forEach((contract: ParsedContract) => {
-            if(contract.viewForm){
+            if (contract.viewForm) {
                 const parsedView = this.getFormMetadata(contract.viewForm);
-                
+
                 const viewParsed = parsedView.schema.parser(
-                    contract, 
-                    parsedView.components, 
-                    parsedView.tabs
+                    contract,
+                    parsedView.components,
+                    parsedView.tabs,
                 );
 
                 parsedView.schema.generateOutput(
-                    path.resolve(parsedView.output), 
-                    viewParsed
+                    path.resolve(parsedView.output),
+                    viewParsed,
                 );
             }
 
-            if(contract.viewPage){
+            if (contract.viewPage) {
                 const parsedPage = this.getPageMetadata(contract.viewPage);
-                console.log(parsedPage);
+
+                const pageParsed = parsedPage.schema.parserPage(
+                    contract,
+                    parsedPage,
+                );
+
+                console.log(pageParsed);
+
+                /*parsedPage.schema.generateOutput(
+                    path.resolve(parsedPage.output), 
+                    pageParsed
+                );*/
             }
         });
     }
 
     private getFormMetadata(view: new () => AbstractForm) {
         const viewInstance = new view();
-        
+
         const output = Reflect.getMetadata(
             FORM_OUTPUT,
             viewInstance.constructor,
@@ -92,18 +100,18 @@ export class FormBuilderTranspile implements ITranspile {
             viewInstance.constructor,
         );
 
-        return { 
+        return {
             schema: new schema(),
-            components: viewInstance.components, 
+            components: viewInstance.components,
             tabs: viewInstance.tabs,
-            output,            
+            output,
             generateHTML,
             injectController,
-            useRPC
+            useRPC,
         };
     }
 
-    private getPageMetadata(page: new () => AbstractPage){
+    private getPageMetadata(page: new () => AbstractPage) {
         const pageInstance = new page();
 
         const schema = Reflect.getMetadata(
@@ -111,16 +119,34 @@ export class FormBuilderTranspile implements ITranspile {
             pageInstance.constructor,
         );
 
-        const router = Reflect.getMetadata(PAGE_ROUTER, pageInstance.constructor);
+        const router = Reflect.getMetadata(
+            PAGE_ROUTER,
+            pageInstance.constructor,
+        );
         const form = Reflect.getMetadata(PAGE_FORM, pageInstance.constructor);
-        const output = Reflect.getMetadata(PAGE_OUTPUT, pageInstance.constructor);
+        const output = Reflect.getMetadata(
+            PAGE_OUTPUT,
+            pageInstance.constructor,
+        );
         const title = Reflect.getMetadata(PAGE_TITLE, pageInstance.constructor);
-        const showTitle = Reflect.getMetadata(PAGE_SHOWTITLE, pageInstance.constructor);
-        const showBreadcrumb = Reflect.getMetadata(PAGE_SHOWBREADCRUMB, pageInstance.constructor);
-        const dataTable = Reflect.getMetadata(PAGE_DATATABLE, pageInstance.constructor);
+        const showTitle = Reflect.getMetadata(
+            PAGE_SHOWTITLE,
+            pageInstance.constructor,
+        );
+        const showBreadcrumb = Reflect.getMetadata(
+            PAGE_SHOWBREADCRUMB,
+            pageInstance.constructor,
+        );
+        const dataTable = Reflect.getMetadata(
+            PAGE_DATATABLE,
+            pageInstance.constructor,
+        );
         const auth = Reflect.getMetadata(PAGE_AUTH, pageInstance.constructor);
         const role = Reflect.getMetadata(PAGE_ROLE, pageInstance.constructor);
-        const actions = Reflect.getMetadata(PAGE_ACTIONS, pageInstance.constructor);
+        const actions = Reflect.getMetadata(
+            PAGE_ACTIONS,
+            pageInstance.constructor,
+        );
 
         return {
             schema: new schema(),
@@ -130,7 +156,7 @@ export class FormBuilderTranspile implements ITranspile {
             title,
             showTitle,
             showBreadcrumb,
-            dataTable: (dataTable) ? pageInstance.dataTable : null,
+            dataTable: dataTable ? pageInstance.dataTable : null,
             auth,
             role,
             actions,

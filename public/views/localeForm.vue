@@ -13,10 +13,6 @@
 
 </template>
 
-<style scoped>
-/* Add your styles here */
-</style>
-
 <script setup>
 import { ref, onMounted } from 'vue';
 const form$ = ref(null);

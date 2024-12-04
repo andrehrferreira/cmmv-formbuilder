@@ -2,6 +2,7 @@ import { defineConfig } from 'vite';
 import { resolve } from 'path';
 import vue from '@vitejs/plugin-vue';
 import postcssNesting from 'postcss-nesting';
+import Components from 'unplugin-vue-components/vite';
 
 export default defineConfig({
     envDir: './',
@@ -9,13 +10,11 @@ export default defineConfig({
     css: {
         preprocessorOptions: {
             scss: {
-              additionalData: `@import "@vueform/vueform/themes/vueform/scss/index.scss";`
-            }
+                additionalData: `@import "@vueform/vueform/themes/vueform/scss/index.scss";`,
+            },
         },
         postcss: {
-            plugins: [
-                postcssNesting
-            ],
+            plugins: [postcssNesting],
         },
     },
 
@@ -23,51 +22,40 @@ export default defineConfig({
         vue({
             template: {
                 compilerOptions: {
-                    isCustomElement: (tag) => tag.includes('-')
-                }
-            }
-        }), 
+                    isCustomElement: tag => tag.includes('-'),
+                },
+            },
+        }),
+        Components({
+            dirs: ['src/components'],
+            extensions: ['vue'],
+            include: [/\.vue$/, /\.vue\?vue/],
+            resolvers: [],
+            dts: true,
+            deep: true,
+        }),
     ],
 
     server: {
         host: true,
-        port: 5000, 
+        port: 5000,
         cors: {
-            origin: 'http://localhost:3000', 
-            credentials: true, 
+            origin: 'http://localhost:3000',
+            credentials: true,
         },
         proxy: {
             '/api': {
                 target: 'http://localhost:3000',
                 changeOrigin: true,
-                secure: false, 
-                rewrite: (path) => path.replace(/^\/api/, ''), 
+                secure: false,
+                rewrite: path => path.replace(/^\/api/, ''),
             },
         },
     },
 
-    build: {
-        target: 'esnext',
-        minify: 'terser',
-        lib: {
-            entry: resolve(__dirname, 'src/index.ts'),
-            name: 'cmmv',
-            fileName: (format) => `cmmv.${format}.js`,
-            formats: ['es', 'cjs', 'umd', 'iife']
-        },
-        rollupOptions: {
-            external: ['vue'],                  
-            output: {
-                globals: {
-                    vue: 'Vue'
-                }
-            }
-        }
-    },
-    
     resolve: {
         alias: {
-            '@': resolve(__dirname, 'public')    
-        }
-    }
-})
+            '@': resolve(__dirname, 'public'),
+        },
+    },
+});

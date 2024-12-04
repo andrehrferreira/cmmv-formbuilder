@@ -1,15 +1,14 @@
 <p align="center">
   <a href="https://cmmv.io/" target="blank"><img src="https://raw.githubusercontent.com/andrehrferreira/docs.cmmv.io/main/public/assets/logo_CMMV2_icon.png" width="300" alt="CMMV Logo" /></a>
 </p>
-<p align="center">Contract-Model-Model-View (CMMV) <br/> A minimalistic framework for building scalable and modular applications using TypeScript contracts.</p>
+<p align="center">Contract-Model-Model-View (CMMV) <br/> Building scalable and modular applications using contracts.</p>
 <p align="center">
-    <a href="https://www.npmjs.com/package/@cmmv/core"><img src="https://img.shields.io/npm/v/@cmmv/core.svg" alt="NPM Version" /></a>
-    <a href="https://github.com/andrehrferreira/cmmv/blob/main/LICENSE"><img src="https://img.shields.io/npm/l/@cmmv/core.svg" alt="Package License" /></a>
-    <a href="https://dl.circleci.com/status-badge/redirect/circleci/QyJWAYrZ9JTfN1eubSDo5u/7gdwcdqbMYfbYYX4hhoNhc/tree/main" target="_blank"><img src="https://dl.circleci.com/status-badge/img/circleci/QyJWAYrZ9JTfN1eubSDo5u/7gdwcdqbMYfbYYX4hhoNhc/tree/main.svg" alt="CircleCI" /></a>
+    <a href="https://www.npmjs.com/package/@cmmv/formbuilder"><img src="https://img.shields.io/npm/v/@cmmv/formbuilder.svg" alt="NPM Version" /></a>
+    <a href="https://github.com/andrehrferreira/cmmv-formbuilder/blob/main/LICENSE"><img src="https://img.shields.io/npm/l/@cmmv/formbuilder.svg" alt="Package License" /></a>
 </p>
 
 <p align="center">
-  <a href="https://cmmv.io">Documentation</a> &bull;
+  <a href="https://ui.cmmv.io">Documentation</a> &bull;
   <a href="https://github.com/andrehrferreira/cmmv-formbuilder/issues">Report Issue</a>
 </p>
 
@@ -390,28 +389,3 @@ const form$ = ref(null);
 ...
 </script>
 ```
-
-## Documentation
-
-The complete documentation is available [here](https://cmmv.io).
-
-Additionally, for further insights and advanced configurations:
-
-* **Vueform Documentation**: Explore the [Vueform documentation](https://vueform.com/docs) to understand the available options for each form component, their properties, and usage examples. This is essential for maximizing the capabilities of your forms.
-
-* **TailwindCSS Documentation**: Refer to the [TailwindCSS documentation](https://tailwindcss.com/docs) for styling customizations, extending themes, and creating responsive designs tailored to your application’s needs.
-
-## Support
-
-CMMV is an open-source project, and we are always looking for contributors to help improve it. If you encounter a bug or have a feature request, please open an issue on [GitHub](https://github.com/andrehrferreira/cmmv/issues).
-
-## Stay in Touch
-
-- Author - [André Ferreira](https://github.com/andrehrferreira)
-- Twitter - [@andrehrferreira](https://twitter.com/andrehrferreira)
-- Linkdin - [@andrehrf](https://www.linkedin.com/in/andrehrf)
-- Youtube - [@Andrehrferreira](https://www.youtube.com/@Andrehrferreira)
-
-## License
-
-CMMV is [MIT licensed](LICENSE).
