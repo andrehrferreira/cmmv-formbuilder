@@ -1,0 +1,17 @@
+## 0.0.2 (2024-12-10)
+
+
+### Bug Fixes
+
+* build settings ([973f5b3](https://github.com/andrehrferreira/cmmv-formbuilder/commit/973f5b32ac75b8387dab45366d9b3959f64fa2b9))
+* package, readme ([96142fa](https://github.com/andrehrferreira/cmmv-formbuilder/commit/96142fa30e39ff1ceadac52a5288ea765fe1b86d))
+* readme ([9933748](https://github.com/andrehrferreira/cmmv-formbuilder/commit/99337487540125372e0432967432bf909ca5b688))
+* release script ([b2b6809](https://github.com/andrehrferreira/cmmv-formbuilder/commit/b2b6809adbe52a7e5c587604694c6c938fef05ff))
+
+
+### Features
+
+* update depencencies ([cb40406](https://github.com/andrehrferreira/cmmv-formbuilder/commit/cb4040695b66e58cb09485f859cc14cbc2c6d2aa))
+
+
+
