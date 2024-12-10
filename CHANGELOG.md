@@ -1,3 +1,12 @@
+## [0.0.4](https://github.com/andrehrferreira/cmmv-formbuilder/compare/v0.0.3...v0.0.4) (2024-12-10)
+
+
+### Bug Fixes
+
+* package ([4118885](https://github.com/andrehrferreira/cmmv-formbuilder/commit/4118885bc89f525fb634ee321a75b07309ed3f91))
+
+
+
 ## 0.0.3 (2024-12-10)
 
 
