@@ -1,6 +1,6 @@
 {
     "name": "@cmmv/formbuilder",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "main": "Form and listing screen generator in Vue3 + Tailwindcss for CMMV",
     "scripts": {
         "prebuild": "pnpm run clean",
