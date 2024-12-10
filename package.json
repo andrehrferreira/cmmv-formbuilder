@@ -1,7 +1,6 @@
 {
     "name": "@cmmv/formbuilder",
     "version": "0.0.3",
-    "main": "Form and listing screen generator in Vue3 + Tailwindcss for CMMV",
     "scripts": {
         "prebuild": "pnpm run clean",
         "clean": "rimraf dist",
@@ -42,7 +41,7 @@
         "url": "https://github.com/andrehrferreira/cmmv-formbuilder/issues"
     },
     "homepage": "https://github.com/andrehrferreira/cmmv-formbuilder#readme",
-    "description": "CMMV (@formbuilder)",
+    "description": "Form and listing screen generator in Vue3 + Tailwindcss for CMMV",
     "changelog": {
         "labels": {
             "type: feature :tada:": "Features",
